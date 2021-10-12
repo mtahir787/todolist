@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #363537;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 40rem;
+  min-height: 100vh;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s linear;
+}
+
+.container .note_img {
+  font-size: 8rem;
+  user-select: none;
+  padding: auto;
+  display: grid;
+  place-items: center;
+}
+
+.container figure figcaption {
+  font-size: 2.5rem;
+  color: #000;
+  margin-top: 1rem;
+}
+.container .additem {
+  margin: 2rem 0;
+  padding: 0;
+}
+.container .additem input {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  margin: 0;
+}
+
+.container .additem .fa-plus {
+  font-size: 1.5rem;
+  background-color: #fff;
+  padding: 1rem 1rem 0.8rem 1rem;
+  cursor: pointer;
+}
+.container .additem .fa-edit {
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #33ff33;
+  padding: 1rem 1rem 0.8rem 1rem;
+  cursor: pointer;
+}
+
+.container .additem .fa-plus:hover {
+  color: rgba(0, 0, 0, 0.398);
+}
+
+.container .list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.container .list .list_item {
+  width: 74%;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+}
+
+.container .list .list_item:hover {
+  background-color: #fff;
+  color: #000;
+}
+.container .list .list_item:hover .fa-edit {
+  color: #33ff33;
+}
+.container .list .list_item:hover .fa-trash-alt {
+  color: red;
+}
+.container .list .list_item h3 {
+  flex: 1;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.container .list .list_item .todo_btns .fa-edit,
+.fa-trash-alt {
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.container .romove_all_items {
+  font-size: 2rem;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s linear;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container .romove_all_items::before {
+  content: "Remove All";
+  padding-top: 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.3s linear;
+  color: white;
+}
+.container .romove_all_items::after {
+  content: "Remove All";
+  padding-top: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(12, 243, 78);
+  transform-origin: top;
+  transform: rotateX(90deg) rotateY(90deg) rotateY(90deg) rotateZ(90deg);
+  transition: all 0.3s linear;
+}
+.container .romove_all_items:hover::before {
+  top: -100%;
+  left: -100%;
+  opacity: 0.5;
+  transform-origin: top;
+  transform: rotateX(90deg) rotateY(90deg) rotateZ(90deg);
+}
+.container .romove_all_items:hover::after {
+  top: 0%;
+  left: 0;
+  opacity: 1;
+  transform-origin: top;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  color: white;
+}
